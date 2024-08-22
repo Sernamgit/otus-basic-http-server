@@ -35,7 +35,6 @@ public class CreateNewItemProcessor implements RequestProcessor {
                     itemJson;
             out.write(response.getBytes(StandardCharsets.UTF_8));
         } catch (JsonParseException e) {
-            logger.error("Некорректный формат входящего JSON объекта: ", e);
             throw new BadRequestException("Некорректный формат входящего JSON объекта");
         }
     }

@@ -87,11 +87,11 @@ public class HttpRequest {
     }
 
     public void printInfo(boolean showRawRequest) {
-        logger.info("URI: {}", uri);
-        logger.info("Method: {}", method);
-        logger.info("Body: {}", body);
+        logger.debug("URI: {}", uri);
+        logger.debug("Method: {}", method);
+        logger.debug("Body: {}", body);
         if (showRawRequest) {
-            logger.info("Raw Request: {}", rawRequest);
+            logger.debug("Raw Request: {}", rawRequest);
         }
     }
 }

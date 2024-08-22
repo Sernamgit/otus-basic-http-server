@@ -48,7 +48,7 @@ public class Dispatcher {
             logger.info("Выполнение обработчика для маршрута: {}", request.getRoutingKey());
             processors.get(request.getRoutingKey()).execute(request, out);
         } catch (BadRequestException e) {
-            logger.error("BadRequest: ", e);
+            logger.error(e.getMessage(), e);
             DefaultErrorDto defaultErrorDto = new DefaultErrorDto("CLIENT_DEFAULT_ERROR", e.getMessage());
             String jsonError = new Gson().toJson(defaultErrorDto);
             String response = "" +
